@@ -1,0 +1,44 @@
+.memories-page { position: relative; isolation: isolate; padding: 26px 32px 20px; background: radial-gradient(ellipse at 65% 15%, #fffaf5, #fcf0e4); overflow: hidden; }
+.memories-heading { position: relative; z-index: 2; text-align: center; }
+.memories-heading h1 { margin: 0 0 11px; font-size: clamp(46px, 13vw, 62px); font-weight: 500; line-height: .88; letter-spacing: -2.2px; }
+.memories-heading h1:focus { outline: none; }
+.memories-heading h1 span { display: inline-block; color: #b78b65; font-size: .8em; transform: rotate(-12deg); margin-left: 3px; }
+.memories-heading p { font-size: 19px; line-height: 1.3; margin: 0; }
+.memory-carousel { position: relative; z-index: 1; margin-top: 28px; }
+.memory-carousel:focus-visible { outline: 1px solid #b88e72; outline-offset: 7px; border-radius: 6px; }
+.polaroid-stack { position: relative; width: 87%; margin: 0 auto; padding-top: 10px; touch-action: pan-y pinch-zoom; }
+.polaroid-shadow-card { position: absolute; inset: 12px 0 0; border: 1px solid #e2d3c1; background: #f1e4d7; box-shadow: 0 3px 8px #5f39251a; }
+.shadow-one { transform: rotate(-9deg) translate(-8px, -4px); }
+.shadow-two { transform: rotate(-4deg) translate(4px, -8px); background: #fff8ee; }
+.main-polaroid { position: relative; padding: 13px 13px 0; background: #fffcf5; box-shadow: 0 7px 15px #5135202a; transform: rotate(5deg); animation: memory-arrive 300ms ease-out; }
+.memory-image { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #ead9cc; }
+.memory-image img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0; transition: opacity 220ms ease; }
+.memory-image img.photo-ready { opacity: 1; }
+.memory-image.sample-image img { position: absolute; max-width: none; object-fit: fill; }
+.memory-image .artwork-skeleton { inset: 0; border-radius: 0; }
+.sample-label { position: absolute; bottom: 0; left: 0; right: 0; color: white; text-align: center; font-size: 14px; padding: 18px 4px 5px; background: linear-gradient(transparent, #2e202a70); }
+.main-polaroid figcaption { min-height: 58px; padding: 12px 2px; text-align: center; font-size: 18px; font-style: italic; line-height: 1.2; color: #7c4d38; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.main-polaroid figcaption span { font-size: 23px; }
+.paper-tape { position: absolute; width: 74px; height: 25px; z-index: 3; top: -3px; left: calc(50% - 37px); transform: rotate(-7deg); background: #dec9a8a6; border: 1px solid #e0cbaa30; clip-path: polygon(0 5%, 97% 0, 100% 94%, 3% 100%, 0 88%, 3% 75%, 0 63%, 4% 49%, 0 30%); }
+.memory-thumbnails { display: flex; justify-content: center; align-items: center; gap: 20px; margin: 30px 0 12px; padding: 0 16px; }
+.thumbnail-polaroid { width: 44%; padding: 7px 7px 5px; background: #fffaf1; box-shadow: 0 4px 10px #65482a26; border: 1px solid #eadbcb; transition: transform 180ms; }
+.thumbnail-1 { transform: rotate(-7deg); }
+.thumbnail-2 { transform: rotate(6deg); }
+.thumbnail-polaroid > span { font-size: 13px; font-style: italic; display: block; line-height: 1.3; padding-top: 5px; color: #90634b; }
+@media (hover: hover) { .thumbnail-polaroid:hover { transform: rotate(0deg) translateY(-3px); } }
+.carousel-controls { display: flex; justify-content: center; align-items: center; gap: 28px; padding-top: 4px; }
+.carousel-controls p { min-width: 52px; font-size: 17px; text-align: center; font-variant-numeric: tabular-nums; }
+.carousel-arrow { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid #c99d7c; border-radius: 50%; background: #fffaf4aa; }
+.carousel-arrow:active { background: #efdccc; }
+.memories-next { position: relative; z-index: 2; margin: 12px auto 0; font-size: 22px; }
+.memory-image-error { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-align: center; padding: 8px; background: #f1e3d8; font-size: 15px; }
+.memory-image-error button { display: inline-flex; align-items: center; gap: 5px; min-height: 36px; text-decoration: underline; text-underline-offset: 3px; }
+.memory-floral-edge { position: absolute; z-index: 0; width: 38px; height: 405px; overflow: hidden; top: 165px; left: 0; opacity: .85; pointer-events: none; }
+.memory-floral-edge img { position: absolute; width: 1536px; max-width: none; height: 1024px; left: -844px; top: -320px; }
+.memory-ribbon-edge { position: absolute; z-index: 0; width: 48px; height: 170px; overflow: hidden; top: 0; right: 0; pointer-events: none; }
+.memory-ribbon-edge img { position: absolute; width: 1536px; max-width: none; height: 1024px; left: -1218px; top: -134px; }
+.chapter-button { display: grid; place-items: center; width: 22px; min-height: 38px; }
+@keyframes memory-arrive { from { opacity: .2; transform: rotate(3deg) translateY(5px); } to { opacity: 1; transform: rotate(5deg) translateY(0); } }
+@media (max-width: 480px) { .memories-page { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-top: 30px; padding-bottom: 22px; } }
+@media (max-width: 360px) { .memories-page { padding-left: 25px; padding-right: 25px; } .memories-heading p { font-size: 17px; } .main-polaroid figcaption { font-size: 16px; } .memory-thumbnails { gap: 15px; padding: 0 8px; } }
+@media (prefers-reduced-motion: reduce) { .main-polaroid { animation: none; } .memory-image img, .thumbnail-polaroid { transition: none; } }

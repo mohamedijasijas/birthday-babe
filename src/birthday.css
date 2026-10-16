@@ -1,0 +1,38 @@
+.birthday-finale { position: relative; isolation: isolate; flex: 1; overflow: hidden; padding: 24px 30px 16px; background: radial-gradient(ellipse at 50% 35%, #fffaf4, #fceee4); }
+.finale-progress { text-align: center; font-size: 17px; }
+.finale-progress > div { display: flex; justify-content: center; gap: 16px; margin-bottom: 13px; }
+.finale-progress > div span { height: 6px; width: 6px; border-radius: 50%; background: #8a304d; }
+.birthday-finale h1 { text-align: center; white-space: pre-line; margin: 24px -8px 14px; font-size: clamp(38px, 11vw, 50px); line-height: .98; letter-spacing: -1.7px; font-weight: 500; }
+.birthday-finale h1:focus { outline: none; }
+.finale-heading-heart { margin: 0 auto; transform: rotate(-12deg); }
+.birthday-cake { display: block; position: relative; width: calc(100% + 60px); margin: 0 -30px; padding-top: 48px; background: transparent; border: 0; }
+.birthday-cake:focus-visible { outline-offset: -5px; }
+.cake-artwork { display: block; position: relative; overflow: hidden; aspect-ratio: 470 / 215; }
+.cake-artwork > img { position: absolute; max-width: none; width: 326.808511%; height: auto; left: -172.765957%; top: -174.883721%; opacity: 0; transition: opacity 200ms; }
+.cake-artwork > img.ready { opacity: 1; }
+.cake-artwork::after { content: ''; position: absolute; inset: 0; background: linear-gradient(transparent 90%, #fcf1e6); pointer-events: none; }
+.cake-artwork .artwork-skeleton { inset: 0; border-radius: 0; }
+.cake-flame { position: absolute; z-index: 1; left: calc(50% - 5px); top: 17px; width: 10px; height: 29px; background: radial-gradient(ellipse at 50% 75%, #fffce7 0 24%, #ffd87c 40%, #e9ad48 85%); border-radius: 75% 25% 55% 45% / 80% 40% 60% 20%; box-shadow: 0 0 12px #eab54d70; transform-origin: bottom; animation: birthday-flame 1.7s ease-in-out infinite alternate; transition: opacity 300ms; }
+.cake-wick { position: absolute; z-index: 1; left: calc(50% - 1px); top: 44px; width: 2px; height: 6px; background: #72513d; }
+.is-wished .cake-flame { opacity: 0; animation: none; }
+.cake-image-fallback { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; background: #fff4eb; font-size: 72px; }
+.cake-image-fallback > span { font-size: 18px; }
+.cake-retry { display: block; margin: 4px auto; font-size: 15px; text-decoration: underline; min-height: 35px; }
+.wish-instruction { position: relative; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 43px; padding: 9px 15px; background: #f6dcd5; border-radius: 99px; font-size: 17px; margin: 0 auto; line-height: 1.15; }
+.wish-status { min-height: 33px; margin: 9px auto 0; font-size: 14px; text-align: center; line-height: 1.4; color: #9b6659; }
+.finale-message { text-align: center; font-size: 23px; line-height: 1.15; margin: 7px auto 0; }
+.finale-divider { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 16px 0; }
+.finale-divider > span { width: 28px; height: 1px; background: #cfa98b; }
+.finale-signature { font-size: 30px; font-style: italic; transform: rotate(-4deg); text-align: center; margin: 0 auto 22px; color: #944d59; }
+.finale-actions .primary-button { font-size: 21px; gap: 12px; }
+.save-birthday-card { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; min-height: 52px; padding: 12px 15px; border: 1px solid #8b3c53; border-radius: 99px; color: #783048; font-size: 21px; margin-top: 11px; }
+.save-birthday-card:disabled { opacity: .6; }
+.card-save-status { font-size: 13px; text-align: center; line-height: 1.4; min-height: 18px; margin-top: 8px; }
+.birthday-confetti { position: absolute; z-index: 4; inset: 0; overflow: hidden; pointer-events: none; }
+.birthday-confetti i { position: absolute; left: var(--piece-x); top: -25px; width: 7px; height: 12px; background: var(--piece-color); opacity: 0; animation: birthday-confetti 3.5s ease-in var(--piece-delay) both; }
+.card-spinner { animation: card-spin 1s linear infinite; }
+@keyframes birthday-flame { from { transform: rotate(-5deg) scaleY(.94); } to { transform: rotate(5deg) scaleY(1.05); } }
+@keyframes birthday-confetti { 0% { opacity: 0; transform: translate(0, 0) rotate(0); } 8% { opacity: 1; } 88% { opacity: .85; } 100% { opacity: 0; transform: translate(var(--piece-drift), 1050px) rotate(var(--piece-turn)); } }
+@keyframes card-spin { to { transform: rotate(360deg); } }
+@media (max-width: 360px) { .birthday-finale { padding-left: 24px; padding-right: 24px; } .birthday-cake { width: calc(100% + 48px); margin-left: -24px; margin-right: -24px; } .wish-instruction { font-size: 15px; } .finale-message { font-size: 21px; } .finale-actions .primary-button, .save-birthday-card { font-size: 19px; } }
+@media (prefers-reduced-motion: reduce) { .cake-flame, .card-spinner { animation: none; } .cake-flame, .cake-artwork > img { transition: none; } .birthday-confetti { display: none; } }

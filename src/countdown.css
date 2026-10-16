@@ -1,0 +1,20 @@
+.countdown-page { background: radial-gradient(ellipse at 50% 35%, #fffaf5, #faede4); }
+.countdown-brand { display: flex; align-items: center; justify-content: center; gap: 7px; border-bottom: 1px solid #eadbce; min-height: 60px; font-size: 23px; }
+.countdown-content { padding: 33px 25px 27px; text-align: center; }
+.countdown-lock { width: 59px; height: 59px; border: 1px solid #d8b6a6; border-radius: 50%; display: grid; place-items: center; margin: 0 auto 21px; color: #975e65; background: #f7e6df; }
+.countdown-content .eyebrow { font-size: 10px; letter-spacing: 2px; }
+.countdown-content h1 { font-size: clamp(32px, 9.3vw, 43px); line-height: 1.04; letter-spacing: -1.1px; margin: 18px -5px; }
+.countdown-intro { font-size: 19px; line-height: 1.4; color: #9b6f60; }
+.countdown-envelope { width: 134px; height: 90px; position: relative; display: grid; place-items: center; background: #e9bdb8; border: 1px solid #c99b96; border-radius: 4px; box-shadow: 0 8px 15px #73403216; margin: 33px auto; transform: rotate(-5deg); overflow: hidden; }
+.countdown-envelope::before { content: ''; position: absolute; width: 96px; height: 96px; border: 1px solid #c1918c; background: #edc8c1; transform: rotate(45deg); top: -59px; }
+.countdown-envelope > span { z-index: 1; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: #84344c; color: #fae9df; font-size: 25px; box-shadow: 0 2px 4px #682b4140; }
+.countdown-unlock-label { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 18px; font-size: 19px; }
+.countdown-clock { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.countdown-unit { border: 1px solid #e5cfc0; border-radius: 9px; background: #fff9f3d9; padding: 13px 3px 10px; }
+.countdown-number { display: block; font-size: 37px; line-height: 1; font-variant-numeric: tabular-nums; }
+.countdown-unit-label { display: block; margin-top: 8px; color: #9c7266; text-transform: uppercase; font-family: var(--font-sans); font-size: 8px; letter-spacing: 1px; }
+.countdown-date { font-size: 21px; margin-top: 26px; }
+.countdown-date > span { display: block; font-family: var(--font-sans); font-size: 10px; letter-spacing: .8px; margin-top: 6px; color: #aa7b68; }
+.countdown-auto-note { font-size: 16px; line-height: 1.4; margin-top: 23px; color: #a27565; }
+.countdown-footer { min-height: 58px; padding: 18px 20px; text-align: center; border-top: 1px solid #eadbce; font-size: 18px; font-style: italic; }
+@media (max-width: 480px) { .countdown-content { flex: 1; display: flex; flex-direction: column; justify-content: center; } .countdown-page { padding-bottom: env(safe-area-inset-bottom); } }
